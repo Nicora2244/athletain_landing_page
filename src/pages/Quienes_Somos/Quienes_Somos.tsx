@@ -1,8 +1,16 @@
+import './Quienes_Somos.css';
+import { AboutHeroSection } from './componentsQuienesSomos/AboutHeroSection';
+import { AboutMissionVisionSection } from './componentsQuienesSomos/AboutMissionVisionSection';
+import { AboutPowerSection } from './componentsQuienesSomos/AboutPowerSection';
+import { AboutWhyUsSection } from './componentsQuienesSomos/AboutWhyUsSection';
+
 export default function Quienes_Somos() {
   return (
-    <div>
-      <h1>¿Quiénes Somos?</h1>
-      <p>En Athletain, somos un equipo de entusiastas del fitness dedicados a ayudarte a alcanzar tus objetivos.</p>
-    </div>
+    <main className="about-page">
+      <AboutHeroSection />
+      <AboutPowerSection />
+      <AboutMissionVisionSection />
+      <AboutWhyUsSection />
+    </main>
   );
 }
