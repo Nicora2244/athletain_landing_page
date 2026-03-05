@@ -1,8 +1,16 @@
+import './Planes.css';
+import { PlansCompareSection } from './componentsPlanes/PlansCompareSection';
+import { PlansDetailsSection } from './componentsPlanes/PlansDetailsSection';
+import { PlansHeroSection } from './componentsPlanes/PlansHeroSection';
+import { PlansPricingSection } from './componentsPlanes/PlansPricingSection';
+
 export default function Planes() {
   return (
-    <div>
-      <h1>Planes</h1>
-      <p>Explora nuestros planes de entrenamiento personalizados para alcanzar tus objetivos de fitness.</p>
-    </div>
+    <main className="plans-page">
+      <PlansHeroSection />
+      <PlansDetailsSection />
+      <PlansPricingSection />
+      <PlansCompareSection />
+    </main>
   );
 }
