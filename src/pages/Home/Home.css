@@ -6,7 +6,7 @@
 }
 
 .home-hero {
-  min-height: 92svh;
+  min-height: clamp(640px, 88svh, 860px);
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -15,8 +15,7 @@
   background: linear-gradient(180deg, #b8c3d8 0%, #ced5e4 48%, var(--home-bg) 100%);
   box-sizing: border-box;
   margin: 0;
-  padding: clamp(24px, 4.5vh, 44px) clamp(20px, 4vw, 48px)
-    clamp(34px, 5.8vh, 56px);
+  padding: clamp(84px, 10vh, 118px) clamp(20px, 4vw, 48px) clamp(36px, 5vh, 56px);
 }
 
 .home-hero-flare {
@@ -38,20 +37,17 @@
 .home-hero-inner {
   width: 100%;
   max-width: 1360px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
   position: relative;
   z-index: 1;
+  min-height: clamp(560px, 74vh, 760px);
 }
 
 .home-hero-copy {
-  flex: 1 1 760px;
-  max-width: 900px;
+  width: min(62%, 880px);
   min-width: 320px;
-  padding-top: clamp(24px, 8vh, 92px);
+  padding-top: clamp(120px, 14vh, 170px);
+  position: relative;
+  z-index: 2;
 }
 
 .home-hero-copy h1 {
@@ -107,33 +103,21 @@
 }
 
 .home-hero-art-wrap {
-  flex: 0 1 390px;
-  width: min(33vw, 390px);
-  min-width: 240px;
-  height: clamp(320px, 45vw, 520px);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.home-hero-art-main {
-  width: 88%;
-  height: 96%;
-  border-radius: 50% 50% 36% 36%;
-  background: linear-gradient(165deg, #24355f 0%, #1a2b50 60%, #0e1a38 100%);
-  box-shadow: 18px 20px 38px rgba(14, 26, 56, 0.24);
-}
-
-.home-hero-art-ball {
   position: absolute;
-  bottom: 14px;
-  right: 12px;
-  width: 74px;
-  height: 74px;
-  border-radius: 50%;
-  background: #dbd9dc;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+  right: -302px;
+  bottom: -62px;
+  width: min(57vw, 840px);
+  min-width: 470px;
+  pointer-events: none;
+}
+
+.home-hero-player {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 24px 34px rgba(11, 24, 48, 0.2));
 }
 
 .home-content-section {
@@ -406,7 +390,48 @@
   line-height: 1.5;
 }
 
+@media (max-width: 1200px) {
+  .home-hero-copy {
+    padding-top: clamp(102px, 12vh, 148px);
+  }
+
+  .home-hero-art-wrap {
+    right: -232px;
+    bottom: -56px;
+    width: min(58vw, 760px);
+    min-width: 360px;
+  }
+}
+
 @media (max-width: 860px) {
+  .home-hero {
+    min-height: auto;
+    padding-top: 88px;
+  }
+
+  .home-hero-inner {
+    min-height: 0;
+  }
+
+  .home-hero-copy {
+    width: 100%;
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .home-hero-art-wrap {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(92vw, 560px);
+    min-width: 0;
+    margin: 14px auto 0;
+  }
+
+  .home-hero-player {
+    max-width: 100%;
+  }
+
   .home-how-steps {
     grid-template-columns: 1fr;
     gap: 16px;

@@ -3,6 +3,7 @@ import Home from './pages/Home/Home';
 import Quienes_Somos from './pages/Quienes_Somos/Quienes_Somos';
 import Planes from './pages/Planes/Planes';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/quienes-somos" element={<Quienes_Somos />} />
         <Route path="/planes" element={<Planes />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

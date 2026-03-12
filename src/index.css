@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('./assets/fonts/Louis George Cafe.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('./assets/fonts/Louis George Cafe Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('./assets/fonts/Louis George Cafe Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('./assets/fonts/Louis George Cafe Bold Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;

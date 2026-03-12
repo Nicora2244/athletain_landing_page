@@ -1,4 +1,5 @@
 import type { MouseEventHandler } from 'react';
+import heroPlayer from '../../../assets/images/hero-player.png';
 
 type HeroSectionProps = {
   onRegister: MouseEventHandler<HTMLButtonElement>;
@@ -22,8 +23,7 @@ export function HeroSection({ onRegister }: HeroSectionProps) {
         </div>
 
         <div className="home-hero-art-wrap">
-          <div className="home-hero-art-main" />
-          <div className="home-hero-art-ball" />
+          <img src={heroPlayer} alt="Jugador de futbol en accion" className="home-hero-player" />
         </div>
       </div>
     </section>
