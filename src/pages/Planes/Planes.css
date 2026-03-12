@@ -441,3 +441,185 @@
     grid-template-columns: 1fr;
   }
 }
+
+.plans-faq-contact-section {
+  width: 100%;
+  background: #f1f3f8;
+  border-top: 1px solid #d4d9e4;
+  border-bottom: 1px solid #d4d9e4;
+}
+
+.plans-faq-banner {
+  width: 100%;
+  min-height: clamp(180px, 30vw, 320px);
+  background-image: linear-gradient(rgba(10, 16, 29, 0.22), rgba(10, 16, 29, 0.22)),
+    url('https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.plans-faq-block {
+  display: flex;
+  justify-content: center;
+  padding: clamp(30px, 4vw, 48px) clamp(20px, 4vw, 48px);
+  border-top: 1px solid #ced4df;
+}
+
+.plans-faq-inner {
+  width: 100%;
+  max-width: 1240px;
+}
+
+.plans-faq-inner h3 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #121a2c;
+}
+
+.plans-faq-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.plans-faq-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plans-faq-item {
+  border: 1px solid #ced4df;
+  background: #f3f5f9;
+}
+
+.plans-faq-item.is-open {
+  background: #eef2f8;
+}
+
+.plans-faq-question {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: #1a2437;
+  font-size: 0.94rem;
+  line-height: 1.28;
+  cursor: pointer;
+}
+
+.plans-faq-item.is-open .plans-faq-question {
+  font-weight: 700;
+}
+
+.plans-faq-chevron {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  color: #23324f;
+  transform: rotate(0deg);
+  transition: transform 180ms ease;
+}
+
+.plans-faq-chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.plans-faq-answer {
+  margin: 0;
+  padding: 0 14px 12px;
+  color: #1f2a3d;
+  font-size: 0.95rem;
+  line-height: 1.34;
+}
+
+.plans-contact-block {
+  border-top: 1px solid #ced4df;
+  display: flex;
+  justify-content: center;
+  padding: clamp(30px, 4vw, 44px) clamp(20px, 4vw, 48px);
+}
+
+.plans-contact-inner {
+  width: 100%;
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(280px, 1fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.plans-contact-copy p,
+.plans-contact-copy h4 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #121a2c;
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  line-height: 1.06;
+}
+
+.plans-contact-copy p {
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  font-weight: 300;
+  max-width: 14ch;
+}
+
+.plans-contact-copy h4 {
+  margin-top: 10px;
+  font-size: clamp(1.9rem, 3.1vw, 3.2rem);
+  font-weight: 900;
+}
+
+.plans-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.plans-contact-form input {
+  width: 100%;
+  border: 1px solid #cfd5e0;
+  background: #f5f7fa;
+  color: #1b2437;
+  min-height: 38px;
+  padding: 0 10px;
+  font-size: 0.9rem;
+}
+
+.plans-contact-form button {
+  margin-left: auto;
+  border: 0;
+  background: #1e3d79;
+  color: #f4f7ff;
+  min-width: 106px;
+  padding: 8px 16px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  cursor: pointer;
+}
+
+@media (max-width: 980px) {
+  .plans-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-contact-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-contact-copy p {
+    max-width: 100%;
+  }
+}
