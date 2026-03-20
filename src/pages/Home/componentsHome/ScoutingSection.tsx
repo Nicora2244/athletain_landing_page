@@ -1,4 +1,5 @@
 import type { MouseEventHandler } from 'react';
+import basketPlayer from '../../../assets/images/basket-player.png';
 
 type ScoutingSectionProps = {
   onRegister: MouseEventHandler<HTMLButtonElement>;
@@ -25,7 +26,13 @@ export function ScoutingSection({ onRegister }: ScoutingSectionProps) {
             </ol>
           </div>
 
-          <div className="home-feature-image home-feature-image-right" />
+          <div className="home-feature-image home-feature-image-right">
+            <img
+              src={basketPlayer}
+              alt="Jugador de baloncesto lanzando al aro"
+              className="home-feature-photo"
+            />
+          </div>
         </div>
 
         <div className="home-overlap-cta">

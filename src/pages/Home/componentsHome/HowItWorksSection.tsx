@@ -1,3 +1,5 @@
+import tennisPlayer from '../../../assets/images/tennis-player.jpg';
+
 export function HowItWorksSection() {
   return (
     <section className="home-how-section">
@@ -23,7 +25,13 @@ export function HowItWorksSection() {
           </div>
         </div>
 
-        <div className="home-how-image" />
+        <div className="home-how-image">
+          <img
+            src={tennisPlayer}
+            alt="Tenista en la cancha"
+            className="home-feature-photo home-how-photo"
+          />
+        </div>
       </div>
     </section>
   );

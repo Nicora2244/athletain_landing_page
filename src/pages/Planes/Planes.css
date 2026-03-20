@@ -83,33 +83,36 @@
 }
 
 .plans-hero-art-wrap {
-  flex: 0 1 420px;
-  width: min(36vw, 430px);
-  min-width: 240px;
-  height: clamp(290px, 40vw, 430px);
+  flex: 0 1 520px;
+  width: min(44vw, 560px);
+  min-width: 300px;
+  height: clamp(290px, 34vw, 420px);
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
-.plans-hero-art-main {
-  width: 98%;
-  height: 94%;
-  border-radius: 48% 48% 36% 36%;
-  background: linear-gradient(155deg, #d6deee 0%, #b8c5dc 62%, #95a4c0 100%);
-  box-shadow: 18px 18px 36px rgba(11, 20, 37, 0.22);
-}
-
-.plans-hero-art-disk {
+.plans-hero-ball {
   position: absolute;
   top: -20px;
-  left: 18px;
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  background: #e8edf6;
-  box-shadow: 0 0 0 10px rgba(237, 82, 64, 0.24);
+  left: -150px;
+  width: clamp(92px, 8vw, 126px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 18px rgba(237, 82, 64, 0.5));
+}
+
+.plans-hero-player {
+  position: absolute;
+  right: -56px;
+  bottom: -12px;
+  width: min(48vw, 620px);
+  min-width: 340px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 22px rgba(237, 82, 64, 0.48));
 }
 
 .plans-details-section {
@@ -433,8 +436,22 @@
   }
 
   .plans-hero-art-wrap {
-    width: min(84vw, 370px);
-    height: clamp(240px, 66vw, 350px);
+    width: min(92vw, 500px);
+    min-width: 0;
+    height: clamp(240px, 62vw, 360px);
+  }
+
+  .plans-hero-ball {
+    top: -28px;
+    left: 8px;
+    width: clamp(76px, 15vw, 104px);
+  }
+
+  .plans-hero-player {
+    right: -26px;
+    bottom: -8px;
+    width: min(95vw, 520px);
+    min-width: 0;
   }
 
   .plans-pricing-grid {
@@ -451,11 +468,13 @@
 
 .plans-faq-banner {
   width: 100%;
-  min-height: clamp(180px, 30vw, 320px);
-  background-image: linear-gradient(rgba(10, 16, 29, 0.22), rgba(10, 16, 29, 0.22)),
-    url('https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1800&q=80');
+  min-height: clamp(180px, 30vw, 420px);
+  background-color: #d7d2cb;
+  background-image: linear-gradient(rgba(10, 16, 29, 0.14), rgba(10, 16, 29, 0.14)),
+    url('../../assets/images/pexels.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
 }
 
 .plans-faq-block {

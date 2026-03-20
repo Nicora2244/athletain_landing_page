@@ -151,6 +151,7 @@
 
 .home-feature-image {
   min-height: 430px;
+  overflow: hidden;
 }
 
 .home-feature-image-left {
@@ -161,6 +162,14 @@
 .home-feature-image-right {
   flex: 1 1 520px;
   background: linear-gradient(120deg, #5c5f6a 0%, #4a4e5a 50%, #6a6e7b 100%);
+}
+
+.home-feature-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  display: block;
 }
 
 .home-feature-copy {
@@ -245,6 +254,7 @@
 }
 
 .home-how-section {
+  --home-how-row-height: clamp(220px, 40vw, 450px);
   width: 100%;
   background: var(--home-bg);
   padding: 22px 0 0;
@@ -253,12 +263,12 @@
 
 .home-how-grid-wrap {
   width: 100%;
-  min-height: clamp(520px, 62vw, 680px);
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: var(--home-how-row-height) var(--home-how-row-height);
 }
 
 .home-how-top {
+  min-height: var(--home-how-row-height);
   background: #f5f5f6;
   border-top: 1px solid #dedfe2;
   border-bottom: 1px solid #dedfe2;
@@ -320,7 +330,15 @@
 }
 
 .home-how-image {
+  min-height: var(--home-how-row-height);
   background: linear-gradient(120deg, #13263f 0%, #22486b 32%, #345f7d 55%, #7f7462 82%, #5f4c3f 100%);
+  overflow: hidden;
+}
+
+.home-how-photo {
+  min-height: 100%;
+  height: 100%;
+  object-position: center 55%;
 }
 
 .home-final-cta-section {
@@ -404,6 +422,19 @@
 }
 
 @media (max-width: 860px) {
+  .home-how-section {
+    --home-how-row-height: auto;
+  }
+
+  .home-how-grid-wrap {
+    grid-template-rows: auto auto;
+  }
+
+  .home-how-top,
+  .home-how-image {
+    min-height: 0;
+  }
+
   .home-hero {
     min-height: auto;
     padding-top: 88px;

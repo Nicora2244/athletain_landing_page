@@ -1,3 +1,5 @@
+import tennisPlayerMale from '../../../assets/images/tennis-player-male.png';
+
 export function AboutHeroSection() {
   return (
     <section className="about-hero">
@@ -10,8 +12,11 @@ export function AboutHeroSection() {
         </div>
 
         <div className="about-hero-art-wrap" aria-hidden="true">
-          <div className="about-hero-art-main" />
-          <div className="about-hero-art-racket" />
+          <img
+            src={tennisPlayerMale}
+            alt=""
+            className="about-hero-player"
+          />
         </div>
       </div>
     </section>

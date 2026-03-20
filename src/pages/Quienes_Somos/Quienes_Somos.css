@@ -85,24 +85,13 @@
   justify-content: center;
 }
 
-.about-hero-art-main {
-  width: 94%;
-  height: 100%;
-  border-radius: 46% 46% 34% 34%;
-  background: linear-gradient(160deg, #ccd4e5 0%, #b4bfd6 56%, #a2afc9 100%);
-  box-shadow: 18px 18px 36px rgba(17, 28, 49, 0.2);
-}
-
-.about-hero-art-racket {
-  position: absolute;
-  bottom: 54px;
-  left: 22%;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 8px solid #f4f5f8;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
-  opacity: 0.5;
+.about-hero-player {
+  width: min(42vw, 500px);
+  min-width: 280px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 26px rgba(230, 94, 94, 0.45));
 }
 
 .about-power-section {
@@ -203,6 +192,15 @@
 
 .about-flip-card-front {
   color: #f6f8ff;
+}
+
+.about-flip-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-flip-card-front::before {

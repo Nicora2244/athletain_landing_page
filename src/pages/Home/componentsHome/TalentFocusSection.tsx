@@ -1,4 +1,5 @@
 import type { MouseEventHandler } from 'react';
+import heroYellowPlayer from '../../../assets/images/hero-yellow-player.png';
 
 type TalentFocusSectionProps = {
   onRegister: MouseEventHandler<HTMLButtonElement>;
@@ -9,7 +10,13 @@ export function TalentFocusSection({ onRegister }: TalentFocusSectionProps) {
     <section className="home-content-section">
       <div className="home-content-inner">
         <div className="home-feature-card">
-          <div className="home-feature-image home-feature-image-left" />
+          <div className="home-feature-image home-feature-image-left">
+            <img
+              src={heroYellowPlayer}
+              alt="Jugador de futbol resaltado en amarillo"
+              className="home-feature-photo"
+            />
+          </div>
 
           <div className="home-feature-copy">
             <h3 className="home-feature-title-light">Tu talento,</h3>

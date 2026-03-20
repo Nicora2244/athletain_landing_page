@@ -1,3 +1,6 @@
+import ballImage from '../../../assets/images/ball.png';
+import volleyballFemalePlayer from '../../../assets/images/volleyball-female-player.png';
+
 export function PlansHeroSection() {
   return (
     <section className="plans-hero">
@@ -11,8 +14,12 @@ export function PlansHeroSection() {
         </div>
 
         <div className="plans-hero-art-wrap" aria-hidden="true">
-          <div className="plans-hero-art-main" />
-          <div className="plans-hero-art-disk" />
+          <img src={ballImage} alt="" className="plans-hero-ball" />
+          <img
+            src={volleyballFemalePlayer}
+            alt=""
+            className="plans-hero-player"
+          />
         </div>
       </div>
     </section>

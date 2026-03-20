@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import gymnast from '../../../assets/images/gymnast.jpg';
+import volleyballPlayers from '../../../assets/images/volleyball-players.jpg';
 
 type CardId = 'mission' | 'vision';
 
@@ -7,6 +9,7 @@ type AboutCard = {
   frontTitle: string;
   backTitle: string;
   description: string;
+  frontImage: string;
 };
 
 const cards: AboutCard[] = [
@@ -14,6 +17,7 @@ const cards: AboutCard[] = [
     id: 'mission',
     frontTitle: 'Nuestra mision',
     backTitle: 'Nuestra mision',
+    frontImage: volleyballPlayers,
     description:
       'Impulsar el desarrollo profesional de los atletas mediante tecnologia, asesoria legal y visibilidad estrategica. Buscamos brindar acceso equitativo a herramientas que les permitan crecer, competir y construir una carrera deportiva solida.',
   },
@@ -21,6 +25,7 @@ const cards: AboutCard[] = [
     id: 'vision',
     frontTitle: 'Nuestra vision',
     backTitle: 'Nuestra vision',
+    frontImage: gymnast,
     description:
       'Ser la plataforma de referencia para atletas que buscan proyeccion internacional, respaldo juridico especializado y posicionamiento profesional. Queremos transformar la forma en que los deportistas gestionan su futuro dentro y fuera del campo.',
   },
@@ -55,6 +60,11 @@ export function AboutMissionVisionSection() {
             >
               <span className="about-flip-card-inner">
                 <span className="about-flip-card-face about-flip-card-front">
+                  <img
+                    src={card.frontImage}
+                    alt=""
+                    className="about-flip-card-image"
+                  />
                   <span className="about-flip-card-badge">{card.id === 'mission' ? '?' : '?'}</span>
                   <span className="about-flip-card-title">{card.frontTitle}</span>
                 </span>
