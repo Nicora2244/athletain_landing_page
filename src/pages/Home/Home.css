@@ -14,8 +14,8 @@
   position: relative;
   background: linear-gradient(180deg, #b8c3d8 0%, #ced5e4 48%, var(--home-bg) 100%);
   box-sizing: border-box;
-  margin: 0;
-  padding: clamp(84px, 10vh, 118px) clamp(20px, 4vw, 48px) clamp(36px, 5vh, 56px);
+  margin: var(--nav-offset) 0 0;
+  padding: var(--hero-top-space) var(--page-gutter) clamp(36px, 5vh, 56px);
 }
 
 .home-hero-flare {
@@ -36,7 +36,7 @@
 
 .home-hero-inner {
   width: 100%;
-  max-width: 1360px;
+  max-width: var(--container-max);
   position: relative;
   z-index: 1;
   min-height: clamp(560px, 74vh, 760px);
@@ -135,7 +135,7 @@
 
 .home-content-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -437,7 +437,8 @@
 
   .home-hero {
     min-height: auto;
-    padding-top: 88px;
+    margin-top: var(--nav-offset-mobile);
+    padding-top: var(--hero-top-space);
   }
 
   .home-hero-inner {

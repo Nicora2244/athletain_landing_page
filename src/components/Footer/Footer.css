@@ -6,9 +6,9 @@
 }
 
 .site-footer-inner {
-  max-width: 1240px;
+  max-width: var(--section-max);
   margin: 0 auto;
-  padding: clamp(28px, 4vw, 42px) clamp(20px, 4vw, 44px);
+  padding: clamp(28px, 4vw, 42px) var(--page-gutter);
   display: grid;
   grid-template-columns: minmax(240px, 1.2fr) repeat(3, minmax(160px, 1fr));
   gap: clamp(20px, 3vw, 40px);

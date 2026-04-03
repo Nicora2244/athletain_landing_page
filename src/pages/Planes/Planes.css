@@ -13,8 +13,8 @@
   justify-content: center;
   position: relative;
   box-sizing: border-box;
-  margin: 0;
-  padding: clamp(88px, 12vh, 116px) clamp(20px, 4vw, 48px)
+  margin: var(--nav-offset) 0 0;
+  padding: var(--hero-top-space) var(--page-gutter)
     clamp(30px, 5vh, 52px);
   background: linear-gradient(180deg, #b8c3d8 0%, #ced6e6 54%, #f1f3f8 100%);
 }
@@ -37,7 +37,7 @@
 
 .plans-hero-inner {
   width: 100%;
-  max-width: 1360px;
+  max-width: var(--container-max);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -120,13 +120,13 @@
   background: #f1f3f8;
   display: flex;
   justify-content: center;
-  padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 48px)
+  padding: clamp(28px, 4vw, 44px) var(--page-gutter)
     clamp(40px, 5vw, 62px);
 }
 
 .plans-details-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
   display: grid;
   grid-template-columns: minmax(260px, 0.9fr) minmax(360px, 1fr);
   gap: clamp(24px, 3.6vw, 72px);
@@ -164,13 +164,13 @@
   background: #f1f3f8;
   display: flex;
   justify-content: center;
-  padding: clamp(30px, 4vw, 48px) clamp(20px, 4vw, 48px)
+  padding: clamp(30px, 4vw, 48px) var(--page-gutter)
     clamp(52px, 6vw, 76px);
 }
 
 .plans-pricing-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
 }
 
 .plans-pricing-inner h3 {
@@ -290,13 +290,13 @@
   border-top: 1px solid #d4d9e4;
   display: flex;
   justify-content: center;
-  padding: clamp(32px, 4vw, 52px) clamp(20px, 4vw, 48px)
+  padding: clamp(32px, 4vw, 52px) var(--page-gutter)
     clamp(56px, 7vw, 88px);
 }
 
 .plans-compare-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
 }
 
 .plans-compare-head {
@@ -428,7 +428,8 @@
 @media (max-width: 860px) {
   .plans-hero {
     min-height: auto;
-    padding-top: 84px;
+    margin-top: var(--nav-offset-mobile);
+    padding-top: var(--hero-top-space);
   }
 
   .plans-hero-copy {
@@ -480,13 +481,13 @@
 .plans-faq-block {
   display: flex;
   justify-content: center;
-  padding: clamp(30px, 4vw, 48px) clamp(20px, 4vw, 48px);
+  padding: clamp(30px, 4vw, 48px) var(--page-gutter);
   border-top: 1px solid #ced4df;
 }
 
 .plans-faq-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
 }
 
 .plans-faq-inner h3 {
@@ -565,12 +566,12 @@
   border-top: 1px solid #ced4df;
   display: flex;
   justify-content: center;
-  padding: clamp(30px, 4vw, 44px) clamp(20px, 4vw, 48px);
+  padding: clamp(30px, 4vw, 44px) var(--page-gutter);
 }
 
 .plans-contact-inner {
   width: 100%;
-  max-width: 1240px;
+  max-width: var(--section-max);
   display: grid;
   grid-template-columns: minmax(260px, 1fr) minmax(280px, 1fr);
   gap: 22px;
