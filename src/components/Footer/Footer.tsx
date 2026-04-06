@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/images/Logo.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -6,9 +7,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="site-footer-col">
-          <h3 className="site-footer-logo">
-            ATHLETA<span>IN</span>
-          </h3>
+          <img src={logo} alt="Athletain" className="site-footer-logo" />
           <p>
             La plataforma que conecta talento con oportunidades reales. Asesoria legal, visibilidad profesional y respaldo
             estrategico para atletas y organizaciones deportivas.

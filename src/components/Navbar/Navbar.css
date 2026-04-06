@@ -22,18 +22,16 @@
 
 .site-nav-logo {
   justify-self: start;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: #0d1420;
-  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
-  font-size: 2.05rem;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   line-height: 1;
 }
 
-.site-nav-logo span {
-  color: #f24b3d;
+.site-nav-logo-image {
+  display: block;
+  height: 42px;
+  width: auto;
 }
 
 .site-nav-links {
@@ -47,9 +45,10 @@
 .site-nav-login {
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.34em;
-  font-size: 0.67rem;
-  font-weight: 500;
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  letter-spacing: 0.26em;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #8f96a4;
   transition: color 140ms ease;
   white-space: nowrap;
@@ -89,11 +88,21 @@
   }
 
   .site-nav-logo {
-    font-size: 1.8rem;
+    justify-content: center;
   }
 
   .site-nav-links {
     gap: 14px;
     flex-wrap: wrap;
+  }
+
+  .site-nav-logo-image {
+    height: 36px;
+  }
+
+  .site-nav-link,
+  .site-nav-login {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
   }
 }

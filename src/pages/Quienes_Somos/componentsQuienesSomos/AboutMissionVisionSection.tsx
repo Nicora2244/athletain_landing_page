@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FaYoutube } from 'react-icons/fa';
+import { IoAmericanFootball } from 'react-icons/io5';
 import gymnast from '../../../assets/images/gymnast.jpg';
 import volleyballPlayers from '../../../assets/images/volleyball-players.jpg';
 
@@ -10,6 +12,7 @@ type AboutCard = {
   backTitle: string;
   description: string;
   frontImage: string;
+  icon: JSX.Element;
 };
 
 const cards: AboutCard[] = [
@@ -18,6 +21,7 @@ const cards: AboutCard[] = [
     frontTitle: 'Nuestra mision',
     backTitle: 'Nuestra mision',
     frontImage: volleyballPlayers,
+    icon: <IoAmericanFootball />,
     description:
       'Impulsar el desarrollo profesional de los atletas mediante tecnologia, asesoria legal y visibilidad estrategica. Buscamos brindar acceso equitativo a herramientas que les permitan crecer, competir y construir una carrera deportiva solida.',
   },
@@ -26,6 +30,7 @@ const cards: AboutCard[] = [
     frontTitle: 'Nuestra vision',
     backTitle: 'Nuestra vision',
     frontImage: gymnast,
+    icon: <FaYoutube />,
     description:
       'Ser la plataforma de referencia para atletas que buscan proyeccion internacional, respaldo juridico especializado y posicionamiento profesional. Queremos transformar la forma en que los deportistas gestionan su futuro dentro y fuera del campo.',
   },
@@ -65,14 +70,18 @@ export function AboutMissionVisionSection() {
                     alt=""
                     className="about-flip-card-image"
                   />
-                  <span className="about-flip-card-badge">{card.id === 'mission' ? '?' : '?'}</span>
-                  <span className="about-flip-card-title">{card.frontTitle}</span>
+                  <span className="about-flip-card-front-content">
+                    <span className="about-flip-card-badge" aria-hidden="true">{card.icon}</span>
+                    <span className="about-flip-card-title">{card.frontTitle}</span>
+                  </span>
                 </span>
 
                 <span className="about-flip-card-face about-flip-card-back">
-                  <span className="about-flip-card-badge">{card.id === 'mission' ? '?' : '?'}</span>
-                  <span className="about-flip-card-title">{card.backTitle}</span>
-                  <span className="about-flip-card-text">{card.description}</span>
+                  <span className="about-flip-card-back-content">
+                    <span className="about-flip-card-badge" aria-hidden="true">{card.icon}</span>
+                    <span className="about-flip-card-title">{card.backTitle}</span>
+                    <span className="about-flip-card-text">{card.description}</span>
+                  </span>
                 </span>
               </span>
             </button>

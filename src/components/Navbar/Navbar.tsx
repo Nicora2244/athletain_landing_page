@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/images/Logo.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -6,7 +7,7 @@ export default function Navbar() {
     <header className="site-nav">
       <nav className="site-nav-inner" aria-label="Principal">
         <NavLink to="/" end className="site-nav-logo">
-          ATHLE<span>TA</span>IN
+          <img src={logo} alt="Athletain" className="site-nav-logo-image" />
         </NavLink>
 
         <div className="site-nav-links">

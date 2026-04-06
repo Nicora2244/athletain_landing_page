@@ -23,16 +23,10 @@
 }
 
 .site-footer-logo {
+  display: block;
+  width: auto;
+  height: 46px;
   margin: 0 0 14px;
-  color: #ffffff;
-  font-size: clamp(1.65rem, 2vw, 2rem);
-  font-weight: 900;
-  letter-spacing: 0.03em;
-  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
-}
-
-.site-footer-logo span {
-  color: #f54e3f;
 }
 
 .site-footer-col p {

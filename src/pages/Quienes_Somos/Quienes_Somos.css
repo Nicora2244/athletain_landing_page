@@ -123,7 +123,7 @@
   line-height: 1.03;
   text-transform: uppercase;
   color: #121a2c;
-  max-width: 16ch;
+  max-width: 23ch;
 }
 
 .about-power-title-block h3 span {
@@ -147,7 +147,7 @@
   display: flex;
   justify-content: center;
   padding: clamp(10px, 2.4vw, 24px) var(--page-gutter)
-    clamp(38px, 5vw, 68px);
+    clamp(16px, 2.6vw, 32px);
 }
 
 .about-flip-grid {
@@ -231,6 +231,14 @@
   background: linear-gradient(130deg, #7f9cc2 0%, #b9ccd9 35%, #8b8b8b 100%);
 }
 
+.about-flip-card--mission .about-flip-card-front::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+
 .about-flip-card--mission .about-flip-card-front::after {
   background: radial-gradient(circle at 21% 12%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0) 42%),
     linear-gradient(40deg, rgba(34, 54, 80, 0.45) 0%, rgba(34, 54, 80, 0) 42%);
@@ -245,10 +253,26 @@
     linear-gradient(30deg, rgba(255, 127, 32, 0.4) 0%, rgba(255, 127, 32, 0) 46%);
 }
 
-.about-flip-card-front .about-flip-card-badge,
-.about-flip-card-front .about-flip-card-title {
+.about-flip-card-front-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 32ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-flip-card--mission .about-flip-card-front-content {
+  color: #101624;
+}
+
+.about-flip-card--vision .about-flip-card-front-content {
+  color: #ffffff;
 }
 
 .about-flip-card-back {
@@ -274,27 +298,48 @@
   z-index: 1;
 }
 
+.about-flip-card-back-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 43ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .about-flip-card-badge {
-  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 1.8rem;
   line-height: 1;
 }
 
 .about-flip-card-title {
-  margin-top: 10px;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  margin: 0;
   font-family: var(--font-rag123), Oswald, Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .about-flip-card-text {
   margin-top: 22px;
-  max-width: 43ch;
+  max-width: 100%;
   font-size: clamp(0.96rem, 1.15vw, 1.14rem);
   line-height: 1.46;
   color: #e8ecfa;
+  text-align: center;
 }
 
 .about-flip-card:focus-visible {
@@ -307,7 +352,7 @@
   background: #f0f2f7;
   display: flex;
   justify-content: center;
-  padding: clamp(56px, 8vw, 110px) var(--page-gutter)
+  padding: clamp(34px, 4.8vw, 64px) var(--page-gutter)
     clamp(62px, 8.2vw, 120px);
 }
 
@@ -355,36 +400,93 @@
 
 @media (max-width: 860px) {
   .about-hero {
-    min-height: auto;
+    min-height: 640px;
     margin-top: var(--nav-offset-mobile);
-    padding-top: var(--hero-top-space);
+    padding: clamp(30px, 7vw, 44px) clamp(18px, 5vw, 28px) 0;
+  }
+
+  .about-hero-flare {
+    top: -40px;
+    right: -28px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-hero-inner {
+    min-height: 100%;
+    align-items: flex-start;
   }
 
   .about-hero-copy {
     flex-basis: 100%;
-    max-width: 100%;
+    max-width: 92%;
     padding-right: 0;
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
   }
 
   .about-hero-art-wrap {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: min(92vw, 440px);
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: min(88vw, 470px);
     min-width: 0;
-    height: clamp(280px, 82vw, 430px);
-    margin-left: auto;
+    height: clamp(360px, 92vw, 520px);
+    margin-left: 0;
+    z-index: 1;
   }
 
   .about-hero-player {
-    width: min(96vw, 520px);
+    width: min(104vw, 580px);
     min-width: 0;
   }
 
-  .about-hero-copy h1,
-  .about-hero-copy h2 {
-    max-width: 16ch;
+  .about-hero-copy h1 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(2.5rem, 8.2vw, 3rem);
+    line-height: 0.96;
     white-space: normal;
+    text-wrap: balance;
+  }
+
+  .about-hero-copy h2 {
+    width: 100%;
+    max-width: none;
+    margin-top: 10px;
+    font-size: clamp(2.5rem, 8.8vw, 3.2rem);
+    line-height: 0.94;
+    white-space: normal;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-hero {
+    min-height: 560px;
+  }
+
+  .about-hero-copy {
+    max-width: 96%;
+  }
+
+  .about-hero-copy h1 {
+    font-size: clamp(2.5rem, 8.2vw, 3rem);
+  }
+
+  .about-hero-copy h2 {
+    font-size: clamp(2.5rem, 8.8vw, 3.2rem);
+  }
+
+  .about-hero-art-wrap {
+    right: -36px;
+    width: min(94vw, 430px);
+    height: clamp(320px, 96vw, 470px);
+  }
+
+  .about-hero-player {
+    width: min(112vw, 500px);
   }
 }
 
