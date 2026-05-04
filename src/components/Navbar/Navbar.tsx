@@ -22,9 +22,9 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        <NavLink to="/login" className={({ isActive }) => `site-nav-login${isActive ? ' is-active' : ''}`}>
+        <a href="https://CrisMen2610.github.io/athletain_app" className="site-nav-login">
           Iniciar Sesion
-        </NavLink>
+        </a>
       </nav>
     </header>
   );
