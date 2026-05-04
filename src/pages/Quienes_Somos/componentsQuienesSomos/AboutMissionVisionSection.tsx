@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { FaYoutube } from 'react-icons/fa';
 import { IoAmericanFootball } from 'react-icons/io5';
 import gymnast from '../../../assets/images/gymnast.jpg';
@@ -12,7 +12,7 @@ type AboutCard = {
   backTitle: string;
   description: string;
   frontImage: string;
-  icon: JSX.Element;
+  icon: ReactNode;
 };
 
 const cards: AboutCard[] = [
