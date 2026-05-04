@@ -422,6 +422,87 @@
 }
 
 @media (max-width: 860px) {
+  .home-content-section {
+    padding: 24px 12px 34px;
+  }
+
+  .home-content-section-tight-bottom {
+    padding-bottom: 12px;
+  }
+
+  .home-content-inner {
+    align-items: stretch;
+  }
+
+  .home-feature-card {
+    min-height: 0;
+    background: #f0f1f4;
+  }
+
+  .home-feature-image,
+  .home-feature-copy {
+    min-height: 0;
+  }
+
+  .home-feature-image {
+    flex-basis: auto;
+  }
+
+  .home-feature-photo {
+    min-height: 340px;
+  }
+
+  .home-feature-copy {
+    flex-basis: auto;
+    padding: 20px 16px 72px;
+  }
+
+  .home-feature-title-light,
+  .home-feature-title-bold {
+    font-size: clamp(2rem, 8vw, 2.9rem);
+    line-height: 0.98;
+  }
+
+  .home-feature-subtitle {
+    margin: 18px 0 12px;
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .home-feature-copy ol {
+    padding-left: 22px;
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+
+  .home-feature-copy li + li {
+    margin-top: 8px;
+  }
+
+  .home-overlap-cta {
+    width: 100%;
+    margin: -56px auto 0;
+    padding: 16px 14px 14px;
+    gap: 14px;
+    position: relative;
+    z-index: 2;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .home-overlap-cta p {
+    flex: 1 1 auto;
+    max-width: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .home-btn-secondary {
+    min-width: 172px;
+    padding: 12px 18px;
+    font-size: 0.8rem;
+    letter-spacing: 0.24em;
+  }
+
   .home-how-section {
     --home-how-row-height: auto;
   }
@@ -438,30 +519,63 @@
   .home-hero {
     min-height: auto;
     margin-top: var(--nav-offset-mobile);
-    padding-top: var(--hero-top-space);
+    padding: var(--hero-top-space) 0 24px;
+  }
+
+  .home-hero-flare {
+    top: 220px;
+    right: 50%;
+    width: 240px;
+    height: 240px;
+    transform: translateX(18%);
   }
 
   .home-hero-inner {
     min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .home-hero-copy {
     width: 100%;
     min-width: 0;
     padding-top: 0;
+    padding: 0 clamp(16px, 6vw, 24px);
+  }
+
+  .home-hero-copy h1 {
+    font-size: clamp(2.15rem, 8vw, 3rem);
+    line-height: 1;
+  }
+
+  .home-hero-copy h2 {
+    margin-top: 4px;
+    font-size: clamp(2.25rem, 8.5vw, 3.2rem);
+    line-height: 0.98;
+  }
+
+  .home-hero-copy p {
+    margin-top: 18px;
+    font-size: clamp(1rem, 4.2vw, 1.15rem);
   }
 
   .home-hero-art-wrap {
     position: relative;
     right: auto;
     bottom: auto;
-    width: min(92vw, 560px);
+    order: -1;
+    width: min(100vw, 560px);
     min-width: 0;
-    margin: 14px auto 0;
+    margin: 0 auto 20px;
   }
 
   .home-hero-player {
     max-width: 100%;
+  }
+
+  .home-btn-primary {
+    margin-top: 18px;
   }
 
   .home-how-steps {

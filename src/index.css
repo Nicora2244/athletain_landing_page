@@ -107,7 +107,7 @@
   --font-body: 'Poppins';
   --nav-height: 64px;
   --nav-offset: 64px;
-  --nav-offset-mobile: 104px;
+  --nav-offset-mobile: 64px;
   --page-gutter: clamp(20px, 4vw, 48px);
   --hero-top-space: clamp(24px, 4vh, 40px);
   --container-max: 1360px;

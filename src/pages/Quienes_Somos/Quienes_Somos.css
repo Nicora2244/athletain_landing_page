@@ -464,7 +464,7 @@
 
 @media (max-width: 540px) {
   .about-hero {
-    min-height: 560px;
+    min-height: 590px;
   }
 
   .about-hero-copy {
@@ -480,13 +480,13 @@
   }
 
   .about-hero-art-wrap {
-    right: -36px;
-    width: min(94vw, 430px);
-    height: clamp(320px, 96vw, 470px);
+    right: -52px;
+    width: min(108vw, 500px);
+    height: clamp(360px, 110vw, 560px);
   }
 
   .about-hero-player {
-    width: min(112vw, 500px);
+    width: min(132vw, 590px);
   }
 }
 
