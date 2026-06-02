@@ -1,77 +1,43 @@
-<<<<<<< HEAD
-# athletain_landing_page
-=======
-# React + TypeScript + Vite
+# Athletain — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page de Athletain: la plataforma que conecta talento deportivo con cazatalentos
+mediante métricas e inteligencia artificial.
 
-Currently, two official plugins are available:
+Construida con **React + TypeScript + Vite** y desplegada en **GitHub Pages**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
 
-## React Compiler
+- Node.js 18+ y npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Desarrollo
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install     # instala dependencias
+npm run dev     # levanta el servidor de desarrollo (http://localhost:5173)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts disponibles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Script            | Descripción                                      |
+| ----------------- | ------------------------------------------------ |
+| `npm run dev`     | Servidor de desarrollo con recarga en caliente.  |
+| `npm run build`   | Compila TypeScript y genera el build de producción en `dist/`. |
+| `npm run preview` | Sirve localmente el build de producción.         |
+| `npm run lint`    | Ejecuta ESLint sobre el proyecto.                |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Estructura
+
 ```
->>>>>>> b8cf92f (init react app with vite)
+src/
+  components/      # Navbar y Footer compartidos
+  pages/
+    Home/          # Página de inicio
+    Quienes_Somos/ # Sobre nosotros
+    Planes/        # Planes y precios
+  assets/          # Imágenes y fuentes
+```
+
+## Despliegue
+
+El sitio se despliega automáticamente en GitHub Pages mediante el workflow
+`.github/workflows/deploy.yml` al hacer push a la rama `main`.
