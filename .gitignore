@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Branding source files (not web assets) — kept locally, out of the repo
+*.ai
+*.zip
+src/assets/BRANDING/*.pdf

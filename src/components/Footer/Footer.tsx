@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/images/Logo.png';
+import logo from '../../assets/BRANDING/Logo blanco.svg';
 import './Footer.css';
 
 export default function Footer() {
@@ -36,16 +36,16 @@ export default function Footer() {
           <h4>Informacion de contacto</h4>
           <div className="site-footer-contact">
             <p>
-              <strong>Horario:</strong>
-              <span>Todo el dia, todos los dias.</span>
-            </p>
-            <p>
               <strong>Telefono movil:</strong>
-              <span>Lorem ipsum dolor sit</span>
+              <span>
+                <a href="tel:+573165042239">+57 316 504 2239</a>
+              </span>
             </p>
             <p>
-              <strong>Correo electronico</strong>
-              <span>Lorem ipsum dolor</span>
+              <strong>Correo electronico:</strong>
+              <span>
+                <a href="mailto:support@athletain.com">support@athletain.com</a>
+              </span>
             </p>
           </div>
         </div>
