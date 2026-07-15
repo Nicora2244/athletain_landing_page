@@ -54,7 +54,7 @@ export default function Footer() {
           <h4>Legal</h4>
           <nav className="site-footer-links" aria-label="Links legales">
             <a href="#">Aviso Legal</a>
-            <a href="#">Politica de privacidad</a>
+            <NavLink to="/politica-de-datos">Politica de tratamiento de datos</NavLink>
             <a href="#">Politica de cookies (UE)</a>
             <a href="#">Accesibilidad</a>
           </nav>
