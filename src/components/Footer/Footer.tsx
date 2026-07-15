@@ -53,10 +53,8 @@ export default function Footer() {
         <div className="site-footer-col">
           <h4>Legal</h4>
           <nav className="site-footer-links" aria-label="Links legales">
-            <a href="#">Aviso Legal</a>
+            <NavLink to="/terminos-y-condiciones">Terminos y Condiciones</NavLink>
             <NavLink to="/politica-de-datos">Politica de tratamiento de datos</NavLink>
-            <a href="#">Politica de cookies (UE)</a>
-            <a href="#">Accesibilidad</a>
           </nav>
         </div>
       </div>
