@@ -41,6 +41,17 @@ jobs:
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
 
+      # GitHub Pages sirve 404.html con status HTTP 404, así que las rutas del
+      # router renderizan bien pero responden 404. Apple exige que la URL de la
+      # política de privacidad devuelva 200, así que estas rutas se materializan
+      # como carpetas reales con su propio index.html.
+      - name: Pre-render legal routes
+        run: |
+          for route in politica-de-datos terminos-y-condiciones; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
