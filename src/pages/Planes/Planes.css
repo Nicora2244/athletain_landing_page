@@ -184,29 +184,131 @@
   color: #121a2c;
 }
 
-.plans-pricing-tabs {
-  margin-top: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-}
-
-.plans-pricing-tab {
-  border: 0;
-  background: transparent;
-  padding: 8px 22px;
-  min-width: 162px;
+.plans-pricing-eyebrow {
+  margin: 0 0 10px;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #24324f;
-  cursor: pointer;
+  color: #1e3d79;
 }
 
-.plans-pricing-tab.is-active {
+.plans-pricing-subtitle {
+  margin: 12px auto 0;
+  max-width: 48ch;
+  text-align: center;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.35;
+  color: #323b4f;
+}
+
+.plans-pricing-section.is-scout {
+  background: linear-gradient(180deg, #1e3d79 0%, #132850 100%);
+}
+
+.plans-pricing-section.is-scout .plans-pricing-eyebrow {
+  color: #f8a094;
+}
+
+.plans-pricing-section.is-scout .plans-pricing-inner h3,
+.plans-pricing-section.is-scout .plans-card h4,
+.plans-pricing-section.is-scout .plans-card-price,
+.plans-pricing-section.is-scout .plans-card-description {
+  color: #f4f7ff;
+}
+
+.plans-pricing-section.is-scout .plans-pricing-subtitle,
+.plans-pricing-section.is-scout .plans-card-note {
+  color: #c3cde3;
+}
+
+.plans-pricing-section.is-scout .plans-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(195, 205, 227, 0.22);
+}
+
+.plans-pricing-section.is-scout .plans-card:hover,
+.plans-pricing-section.is-scout .plans-card:focus-within {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(195, 205, 227, 0.36);
+  box-shadow: 0 8px 20px rgba(4, 10, 24, 0.35);
+}
+
+.plans-pricing-section.is-scout .plans-card-cta {
+  background: #f86454;
+  color: #ffffff;
+}
+
+.plans-pricing-section {
+  scroll-margin-top: var(--nav-offset);
+}
+
+.plans-audience-picker {
+  margin-top: clamp(20px, 3vh, 32px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 680px;
+}
+
+.plans-audience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  text-decoration: none;
+  background: rgba(241, 243, 248, 0.82);
+  border: 1px solid #c4cddf;
+  color: #121a2c;
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.plans-audience-card:hover,
+.plans-audience-card:focus-visible {
+  transform: translateY(-2px);
+  background: #f6f7fb;
+  box-shadow: 0 8px 18px rgba(17, 26, 44, 0.12);
+}
+
+.plans-audience-card + .plans-audience-card {
   background: #1e3d79;
-  color: #f1f6ff;
+  border-color: #1e3d79;
+  color: #f4f7ff;
+}
+
+.plans-audience-card + .plans-audience-card:hover,
+.plans-audience-card + .plans-audience-card:focus-visible {
+  background: #234789;
+}
+
+.plans-audience-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.plans-audience-title {
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  line-height: 1.08;
+}
+
+.plans-audience-price {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.plans-audience-cta {
+  margin-top: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .plans-pricing-grid {
@@ -299,15 +401,7 @@
   max-width: var(--section-max);
 }
 
-.plans-compare-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.plans-compare-head h3 {
+.plans-compare-inner > h3 {
   margin: 0;
   font-family: var(--font-rag123), Oswald, Arial, sans-serif;
   font-size: clamp(2rem, 3.6vw, 3.6rem);
@@ -317,79 +411,97 @@
   color: #121a2c;
 }
 
-.plans-compare-tabs {
-  display: flex;
-  gap: 12px;
+.plans-pricing-eyebrow.plans-compare-eyebrow {
+  text-align: left;
 }
 
-.plans-compare-tab {
-  border: 0;
-  background: transparent;
-  padding: 8px 18px;
-  min-width: 208px;
+.plans-compare-section.is-scout {
+  background: linear-gradient(180deg, #1e3d79 0%, #132850 100%);
+  border-top-color: #1e3d79;
+}
+
+.plans-compare-section.is-scout .plans-compare-eyebrow {
+  color: #f8a094;
+}
+
+.plans-compare-section.is-scout .plans-compare-inner > h3,
+.plans-compare-section.is-scout .plans-compare-incremental-card h4 {
+  color: #f4f7ff;
+}
+
+.plans-compare-incremental-grid {
+  margin-top: clamp(18px, 2.6vw, 30px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.plans-compare-incremental-card {
+  padding: clamp(18px, 2vw, 24px);
+  border: 1px solid #d7dbe4;
+  background: #f6f7fb;
+}
+
+.plans-compare-incremental-card h4 {
+  margin: 0;
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: #24324f;
-  cursor: pointer;
+  color: #1a2234;
 }
 
-.plans-compare-tab.is-active {
-  background: #1e3d79;
-  color: #f2f7ff;
-}
-
-.plans-compare-table-wrap {
-  margin-top: 18px;
-  overflow-x: auto;
-}
-
-.plans-compare-table {
-  width: 100%;
-  min-width: 840px;
-  border-collapse: collapse;
-}
-
-.plans-compare-table thead th {
-  padding: 0 8px 10px;
-  text-align: center;
-  font-size: clamp(1.1rem, 1.6vw, 1.8rem);
+.plans-compare-incremental-base {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #202939;
+  color: #1e3d79;
 }
 
-.plans-compare-table thead th:first-child {
-  text-align: left;
+.plans-compare-incremental-card ul {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.plans-compare-table tbody td {
-  padding: 8px 8px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.plans-compare-table tbody td:first-child {
-  text-align: left;
-  width: 36%;
-  color: #252d3f;
-  font-size: 0.95rem;
+.plans-compare-incremental-card li {
+  position: relative;
+  padding: 5px 0 5px 22px;
+  font-size: 0.9rem;
   line-height: 1.3;
+  color: #252d3f;
 }
 
-.plans-compare-mark {
-  width: 24px;
-  height: 24px;
-  display: inline-grid;
-  place-items: center;
-  font-size: 0.95rem;
-  color: #9da3b1;
-}
-
-.plans-compare-mark.is-enabled {
+.plans-compare-incremental-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: #1e3d79;
   color: #ffffff;
+  font-size: 0.62rem;
+  display: grid;
+  place-items: center;
+}
+
+.plans-compare-section.is-scout .plans-compare-incremental-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(195, 205, 227, 0.22);
+}
+
+.plans-compare-section.is-scout .plans-compare-incremental-base {
+  color: #f8a094;
+}
+
+.plans-compare-section.is-scout .plans-compare-incremental-card li {
+  color: #e3e9f6;
+}
+
+.plans-compare-section.is-scout .plans-compare-incremental-card li::before {
+  background: #f86454;
 }
 
 @media (max-width: 980px) {
@@ -415,13 +527,8 @@
     border-left: 1px solid #d7dbe4;
   }
 
-  .plans-compare-tabs {
-    width: 100%;
-  }
-
-  .plans-compare-tab {
-    min-width: 0;
-    flex: 1;
+  .plans-compare-incremental-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -456,6 +563,14 @@
   }
 
   .plans-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-audience-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .plans-compare-incremental-grid {
     grid-template-columns: 1fr;
   }
 }

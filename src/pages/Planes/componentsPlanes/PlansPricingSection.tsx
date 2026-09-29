@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-type PlanAudience = 'athlete' | 'scout';
+import { audienceSectionId, type PlanAudience } from '../plansAudience';
 
 type PlanCard = {
   name: string;
@@ -66,50 +64,65 @@ const planCardsByAudience: Record<PlanAudience, PlanCard[]> = {
   ],
 };
 
-export function PlansPricingSection() {
-  const [audience, setAudience] = useState<PlanAudience>('athlete');
-  const planCards = planCardsByAudience[audience];
+type AudienceGroup = {
+  audience: PlanAudience;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+};
 
+const audienceGroups: AudienceGroup[] = [
+  {
+    audience: 'athlete',
+    eyebrow: 'Para atletas',
+    title: 'Planes para atletas',
+    subtitle: 'Ponte en el radar de los scouts y entiende tu rendimiento.',
+  },
+  {
+    audience: 'scout',
+    eyebrow: 'Para caza talentos',
+    title: 'Planes para caza talentos',
+    subtitle: 'Encuentra, analiza y prioriza talento con datos.',
+  },
+];
+
+function PlanCardItem({ plan }: { plan: PlanCard }) {
   return (
-    <section className="plans-pricing-section">
-      <div className="plans-pricing-inner">
-        <h3>{audience === 'athlete' ? 'Planes para atletas' : 'Planes para caza talentos'}</h3>
+    <article className="plans-card">
+      <h4>{plan.name}</h4>
+      <p className="plans-card-price">{plan.price}</p>
+      {plan.note && <p className="plans-card-note">{plan.note}</p>}
+      <p className="plans-card-description">{plan.description}</p>
+      <button type="button" className="plans-card-cta">
+        {plan.cta ?? 'Acceder'}
+      </button>
+    </article>
+  );
+}
 
-        <div className="plans-pricing-tabs" role="tablist" aria-label="Tipo de plan">
-          <button
-            type="button"
-            className={`plans-pricing-tab${audience === 'athlete' ? ' is-active' : ''}`}
-            role="tab"
-            aria-selected={audience === 'athlete'}
-            onClick={() => setAudience('athlete')}
-          >
-            Atleta
-          </button>
-          <button
-            type="button"
-            className={`plans-pricing-tab${audience === 'scout' ? ' is-active' : ''}`}
-            role="tab"
-            aria-selected={audience === 'scout'}
-            onClick={() => setAudience('scout')}
-          >
-            Caza talentos
-          </button>
-        </div>
+export function PlansPricingSection() {
+  return (
+    <>
+      {audienceGroups.map((group) => (
+        <section
+          key={group.audience}
+          id={audienceSectionId[group.audience]}
+          className={`plans-pricing-section is-${group.audience}`}
+          aria-labelledby={`${audienceSectionId[group.audience]}-title`}
+        >
+          <div className="plans-pricing-inner">
+            <p className="plans-pricing-eyebrow">{group.eyebrow}</p>
+            <h3 id={`${audienceSectionId[group.audience]}-title`}>{group.title}</h3>
+            <p className="plans-pricing-subtitle">{group.subtitle}</p>
 
-        <div className="plans-pricing-grid">
-          {planCards.map((plan) => (
-            <article key={plan.name} className="plans-card">
-              <h4>{plan.name}</h4>
-              <p className="plans-card-price">{plan.price}</p>
-              {plan.note && <p className="plans-card-note">{plan.note}</p>}
-              <p className="plans-card-description">{plan.description}</p>
-              <button type="button" className="plans-card-cta">
-                {plan.cta ?? 'Acceder'}
-              </button>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+            <div className="plans-pricing-grid">
+              {planCardsByAudience[group.audience].map((plan) => (
+                <PlanCardItem key={plan.name} plan={plan} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+    </>
   );
 }

@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import type { PlanAudience } from '../plansAudience';
 
-type CompareAudience = 'athlete' | 'scout';
+type CompareAudience = PlanAudience;
 
 type CompareRow = {
   feature: string;
@@ -121,80 +121,60 @@ const compareRowsByAudience: Record<CompareAudience, CompareRow[]> = {
   ],
 };
 
-function AvailabilityMark({ enabled }: { enabled: boolean }) {
+const audienceLabels: Record<CompareAudience, { eyebrow: string; title: string }> = {
+  athlete: { eyebrow: 'Para atletas', title: 'Que incluye cada plan de atleta' },
+  scout: { eyebrow: 'Para caza talentos', title: 'Que incluye cada plan de scout' },
+};
+
+const audiences: CompareAudience[] = ['athlete', 'scout'];
+
+function includedByPlan(row: CompareRow) {
+  return [row.col1, row.col2, row.col3, row.col4];
+}
+
+// "Everything in X, plus..." cards: each plan only lists what it adds.
+function CompareIncrementalCards({ audience }: { audience: CompareAudience }) {
+  const compareColumns = compareColumnsByAudience[audience];
+  const rows = compareRowsByAudience[audience];
+
   return (
-    <span className={`plans-compare-mark${enabled ? ' is-enabled' : ''}`} aria-label={enabled ? 'Incluido' : 'No incluido'}>
-      {enabled ? '✓' : '○'}
-    </span>
+    <div className="plans-compare-incremental-grid">
+      {compareColumns.map((column, planIndex) => {
+        const addedFeatures = rows.filter((row) => {
+          const included = includedByPlan(row);
+          return included[planIndex] && (planIndex === 0 || !included[planIndex - 1]);
+        });
+
+        return (
+          <article key={column} className="plans-compare-incremental-card">
+            <h4>{column}</h4>
+            <p className="plans-compare-incremental-base">
+              {planIndex === 0 ? 'Incluye:' : `Todo lo de ${compareColumns[planIndex - 1]}, mas:`}
+            </p>
+            <ul>
+              {addedFeatures.map((row) => (
+                <li key={row.feature}>{row.feature}</li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
+    </div>
   );
 }
 
 export function PlansCompareSection() {
-  const [audience, setAudience] = useState<CompareAudience>('athlete');
-  const compareColumns = compareColumnsByAudience[audience];
-  const compareRows = compareRowsByAudience[audience];
-
   return (
-    <section className="plans-compare-section">
-      <div className="plans-compare-inner">
-        <div className="plans-compare-head">
-          <h3>Compara todas las funciones</h3>
-
-          <div className="plans-compare-tabs" role="tablist" aria-label="Comparar por perfil">
-            <button
-              type="button"
-              className={`plans-compare-tab${audience === 'athlete' ? ' is-active' : ''}`}
-              role="tab"
-              aria-selected={audience === 'athlete'}
-              onClick={() => setAudience('athlete')}
-            >
-              Ver como atleta
-            </button>
-            <button
-              type="button"
-              className={`plans-compare-tab${audience === 'scout' ? ' is-active' : ''}`}
-              role="tab"
-              aria-selected={audience === 'scout'}
-              onClick={() => setAudience('scout')}
-            >
-              Ver como caza talentos
-            </button>
+    <>
+      {audiences.map((audience) => (
+        <section key={audience} className={`plans-compare-section is-${audience}`}>
+          <div className="plans-compare-inner">
+            <p className="plans-pricing-eyebrow plans-compare-eyebrow">{audienceLabels[audience].eyebrow}</p>
+            <h3>{audienceLabels[audience].title}</h3>
+            <CompareIncrementalCards audience={audience} />
           </div>
-        </div>
-
-        <div className="plans-compare-table-wrap">
-          <table className="plans-compare-table">
-            <thead>
-              <tr>
-                <th>Funciones</th>
-                <th>{compareColumns[0]}</th>
-                <th>{compareColumns[1]}</th>
-                <th>{compareColumns[2]}</th>
-                <th>{compareColumns[3]}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {compareRows.map((row) => (
-                <tr key={row.feature}>
-                  <td>{row.feature}</td>
-                  <td>
-                    <AvailabilityMark enabled={row.col1} />
-                  </td>
-                  <td>
-                    <AvailabilityMark enabled={row.col2} />
-                  </td>
-                  <td>
-                    <AvailabilityMark enabled={row.col3} />
-                  </td>
-                  <td>
-                    <AvailabilityMark enabled={row.col4} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+        </section>
+      ))}
+    </>
   );
 }
