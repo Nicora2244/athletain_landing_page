@@ -16,14 +16,14 @@ const audienceShortcuts: AudienceShortcut[] = [
     audience: 'athlete',
     label: 'Soy atleta',
     title: 'Hazte visible y mide tu rendimiento',
-    fromPrice: 'Desde $0 / mes',
+    fromPrice: 'Empieza gratis',
     cta: 'Ver planes de atleta',
   },
   {
     audience: 'scout',
     label: 'Soy caza talentos',
     title: 'Descubre y prioriza talento con datos',
-    fromPrice: 'Desde $149.999 COP / mes',
+    fromPrice: 'Desde $100.000 COP / mes · primer mes gratis',
     cta: 'Ver planes de scout',
   },
 ];
