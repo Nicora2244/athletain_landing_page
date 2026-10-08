@@ -237,7 +237,7 @@
 
 .plans-pricing-section.is-scout .plans-card-cta {
   background: var(--color-secondary-200);
-  color: var(--color-primary-500);
+  color: #fff;
 }
 
 .plans-pricing-section {
@@ -262,13 +262,14 @@
   border: 1px solid var(--color-tertiary-200);
   color: var(--color-primary-500);
   transition: transform 180ms ease, box-shadow 180ms ease,
-    background 180ms ease;
+    background 180ms ease, border-color 180ms ease;
 }
 
 .plans-audience-card:hover,
 .plans-audience-card:focus-visible {
   transform: translateY(-2px);
-  background: var(--color-neutral-100);
+  background: var(--color-tertiary-100);
+  border-color: var(--color-tertiary-300);
   box-shadow: 0 8px 18px rgba(17, 26, 44, 0.12);
 }
 
@@ -280,7 +281,8 @@
 
 .plans-audience-card + .plans-audience-card:hover,
 .plans-audience-card + .plans-audience-card:focus-visible {
-  background: var(--color-primary-300);
+  background: #1c2e50;
+  border-color: #1c2e50;
 }
 
 .plans-audience-label {
@@ -375,8 +377,8 @@
 .plans-card-cta {
   margin-top: 18px;
   border: 0;
-  background: #9baed5;
-  color: #0d1728;
+  background: var(--color-primary-400);
+  color: #fff;
   padding: 8px 16px;
   min-width: 112px;
   font-size: 0.7rem;
@@ -673,7 +675,7 @@
 .plans-faq-chevron {
   flex: 0 0 auto;
   font-size: 0.75rem;
-  color: #23324f;
+  color: #0f1a2e;
   transform: rotate(0deg);
   transition: transform 180ms ease;
 }
@@ -747,7 +749,7 @@
 .plans-contact-form button {
   margin-left: auto;
   border: 0;
-  background: #1e3d79;
+  background: #0f1a2e;
   color: #f4f7ff;
   min-width: 106px;
   padding: 8px 16px;

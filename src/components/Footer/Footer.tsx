@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FaInstagram } from 'react-icons/fa6';
 import logo from '../../assets/BRANDING/Logo blanco.svg';
 import './Footer.css';
 
@@ -14,8 +15,13 @@ export default function Footer() {
           </p>
           <div className="site-footer-social">
             <span>Siguenos en:</span>
-            <a href="#" aria-label="Facebook">
-              f
+            <a
+              href="https://www.instagram.com/athletain"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Athletain"
+            >
+              <FaInstagram aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -25,10 +31,7 @@ export default function Footer() {
           <nav className="site-footer-links" aria-label="Menu del sitio">
             <NavLink to="/">Inicio</NavLink>
             <NavLink to="/quienes-somos">Sobre Nosotros</NavLink>
-            <a href="#">Servicios</a>
-            <a href="#">Exposicion de talento</a>
-            <a href="#">Explorar Atletas</a>
-            <a href="#">Recursos</a>
+            <NavLink to="/planes">Planes</NavLink>
           </nav>
         </div>
 

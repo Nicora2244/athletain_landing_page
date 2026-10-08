@@ -39,7 +39,7 @@ const faqItems: FaqItem[] = [
 ];
 
 export function PlansFaqContactSection() {
-  const [openId, setOpenId] = useState(0);
+  const [openId, setOpenId] = useState(-1);
   const firstColumn = useMemo(() => faqItems.slice(0, 3), []);
   const secondColumn = useMemo(() => faqItems.slice(3), []);
 

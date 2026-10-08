@@ -49,8 +49,9 @@
 }
 
 .site-footer-social a {
-  width: 20px;
-  height: 20px;
+  width: 34px;
+  height: 34px;
+  font-size: 1.05rem;
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
