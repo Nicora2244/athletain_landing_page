@@ -1,12 +1,11 @@
+import { useT } from '../../../i18n/useLanguage';
 export function AboutWhyUsSection() {
+  const t = useT();
   return (
     <section className="about-why-section">
       <div className="about-why-inner">
-        <h3>Por que nosotros?</h3>
-        <p>
-          Porque cada atleta merece ser visto y cada cazatalentos descubrir lo mejor.
-          Athletain hace que eso sea posible, de manera justa y precisa.
-        </p>
+        <h3>{t('aboutWhyUsSection.whyChooseUs')}</h3>
+        <p>{t('aboutWhyUsSection.description')}</p>
       </div>
     </section>
   );

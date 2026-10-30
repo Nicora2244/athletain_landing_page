@@ -1,26 +1,31 @@
+import { useT } from '../../../i18n/useLanguage';
 export function PlansDetailsSection() {
+  const t = useT();
   return (
     <section className="plans-details-section">
       <div className="plans-details-inner">
         <div className="plans-details-title-block">
           <h3>
-            Encuentra el plan que
-            <span> impulsara tu carrera</span>
+            {t('plansDetailsSection.findThePlanThat')}
+            <span>{t('plansDetailsSection.willMoveYourCareerForward')}</span>
           </h3>
         </div>
 
         <div className="plans-details-copy">
           <p>
-            <strong>Visibilidad:</strong> tu perfil en el radar de los scouts
+            <strong>{t('plansDetailsSection.visibility')}</strong> {t('plansDetailsSection.visibilityDescription')}
           </p>
           <p>
-            <strong>Dashboard predictivo IA:</strong> Mide, entiende y proyecta tu rendimiento futuro
+            <strong>{t('plansDetailsSection.aiPredictiveDashboard')}</strong>{' '}
+            {t('plansDetailsSection.dashboardDescription')}
           </p>
           <p>
-            <strong>Filtros de busqueda avanzada:</strong> personaliza el descubrimiento con metricas de machine learning unicas
+            <strong>{t('plansDetailsSection.advancedSearchFilters')}</strong>{' '}
+            {t('plansDetailsSection.searchDescription')}
           </p>
           <p>
-            <strong>Asesoria juridica especializada:</strong> soporte juridico para contratos y negociaciones
+            <strong>{t('plansDetailsSection.specialistLegalAdvice')}</strong>{' '}
+            {t('plansDetailsSection.legalDescription')}
           </p>
         </div>
       </div>

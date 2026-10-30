@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n/useLanguage';
 import type { MouseEventHandler } from 'react';
 import heroYellowPlayer from '../../../assets/images/hero-yellow-player.png';
 
@@ -6,6 +7,7 @@ type TalentFocusSectionProps = {
 };
 
 export function TalentFocusSection({ onRegister }: TalentFocusSectionProps) {
+  const t = useT();
   return (
     <section className="home-content-section">
       <div className="home-content-inner">
@@ -13,36 +15,27 @@ export function TalentFocusSection({ onRegister }: TalentFocusSectionProps) {
           <div className="home-feature-image home-feature-image-left">
             <img
               src={heroYellowPlayer}
-              alt="Jugador de futbol resaltado en amarillo"
+              alt={t('talentFocusSection.footballPlayerHighlightedInYellow')}
               className="home-feature-photo"
             />
           </div>
 
           <div className="home-feature-copy">
-            <h3 className="home-feature-title-light">Tu talento,</h3>
-            <h3 className="home-feature-title-bold">Nuestro enfoque</h3>
-            <h4 className="home-feature-subtitle">Expon tu talento</h4>
+            <h3 className="home-feature-title-light">{t('talentFocusSection.yourTalent')}</h3>
+            <h3 className="home-feature-title-bold">{t('talentFocusSection.ourFocus')}</h3>
+            <h4 className="home-feature-subtitle">{t('talentFocusSection.showcaseYourTalent')}</h4>
 
             <ol>
-              <li>
-                Usa nuestras herramientas de IA para mostrar tu rendimiento,
-                mejorar tus skills y potenciar tu crecimiento deportivo.
-              </li>
-              <li>
-                Te damos visibilidad real frente a cazatalentos y te ofrecemos
-                acompanamiento juridico especializado cuando lo necesites.
-              </li>
+              <li>{t('talentFocusSection.aiTools')}</li>
+              <li>{t('talentFocusSection.support')}</li>
             </ol>
           </div>
         </div>
 
         <div className="home-overlap-cta">
-          <p>
-            Lleva tu talento al mundo profesional. En Athletain te conectamos
-            con decisiones clave y te equipamos para avanzar con seguridad.
-          </p>
+          <p>{t('talentFocusSection.ctaDescription')}</p>
           <button className="home-btn-secondary" onClick={onRegister}>
-            Registrate
+            {t('talentFocusSection.signUp')}
           </button>
         </div>
       </div>

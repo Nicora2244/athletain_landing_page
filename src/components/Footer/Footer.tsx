@@ -1,25 +1,24 @@
+import { useT } from '../../i18n/useLanguage';
 import { NavLink } from 'react-router-dom';
 import { FaInstagram } from 'react-icons/fa6';
 import logo from '../../assets/BRANDING/Logo blanco.svg';
 import './Footer.css';
 
 export default function Footer() {
+  const t = useT();
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
         <div className="site-footer-col">
           <img src={logo} alt="Athletain" className="site-footer-logo" />
-          <p>
-            La plataforma que conecta talento con oportunidades reales. Asesoria legal, visibilidad profesional y respaldo
-            estrategico para atletas y organizaciones deportivas.
-          </p>
+          <p>{t('footer.description')}</p>
           <div className="site-footer-social">
-            <span>Siguenos en:</span>
+            <span>{t('footer.followUs')}</span>
             <a
               href="https://www.instagram.com/athletain"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram de Athletain"
+              aria-label={t('footer.athletainOnInstagram')}
             >
               <FaInstagram aria-hidden="true" />
             </a>
@@ -27,25 +26,25 @@ export default function Footer() {
         </div>
 
         <div className="site-footer-col">
-          <h4>Menu</h4>
-          <nav className="site-footer-links" aria-label="Menu del sitio">
-            <NavLink to="/">Inicio</NavLink>
-            <NavLink to="/quienes-somos">Sobre Nosotros</NavLink>
-            <NavLink to="/planes">Planes</NavLink>
+          <h4>{t('footer.menu')}</h4>
+          <nav className="site-footer-links" aria-label={t('footer.siteNavigation')}>
+            <NavLink to="/">{t('footer.home')}</NavLink>
+            <NavLink to="/quienes-somos">{t('footer.aboutUs')}</NavLink>
+            <NavLink to="/planes">{t('footer.plans')}</NavLink>
           </nav>
         </div>
 
         <div className="site-footer-col">
-          <h4>Informacion de contacto</h4>
+          <h4>{t('footer.contactInformation')}</h4>
           <div className="site-footer-contact">
             <p>
-              <strong>Telefono movil:</strong>
+              <strong>{t('footer.mobile')}</strong>
               <span>
                 <a href="tel:+573165042239">+57 316 504 2239</a>
               </span>
             </p>
             <p>
-              <strong>Correo electronico:</strong>
+              <strong>{t('footer.email')}</strong>
               <span>
                 <a href="mailto:support@athletain.com">support@athletain.com</a>
               </span>
@@ -55,9 +54,9 @@ export default function Footer() {
 
         <div className="site-footer-col">
           <h4>Legal</h4>
-          <nav className="site-footer-links" aria-label="Links legales">
-            <NavLink to="/terminos-y-condiciones">Terminos y Condiciones</NavLink>
-            <NavLink to="/politica-de-datos">Politica de tratamiento de datos</NavLink>
+          <nav className="site-footer-links" aria-label={t('footer.legalLinks')}>
+            <NavLink to="/terminos-y-condiciones">{t('footer.termsAndConditions')}</NavLink>
+            <NavLink to="/politica-de-datos">{t('footer.dataPrivacyPolicy')}</NavLink>
           </nav>
         </div>
       </div>

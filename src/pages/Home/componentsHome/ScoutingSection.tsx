@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n/useLanguage';
 import type { MouseEventHandler } from 'react';
 import basketPlayer from '../../../assets/images/basket-player.png';
 
@@ -6,43 +7,35 @@ type ScoutingSectionProps = {
 };
 
 export function ScoutingSection({ onRegister }: ScoutingSectionProps) {
+  const t = useT();
   return (
     <section className="home-content-section home-content-section-tight-bottom">
       <div className="home-content-inner">
         <div className="home-feature-card">
           <div className="home-feature-copy">
-            <h3 className="home-feature-title-light">Optimiza, identifica y</h3>
-            <h3 className="home-feature-title-bold">Contacta con precision</h3>
-            <h4 className="home-feature-subtitle">Scouting inteligente</h4>
+            <h3 className="home-feature-title-light">{t('scoutingSection.streamlineDiscoverAnd')}</h3>
+            <h3 className="home-feature-title-bold">{t('scoutingSection.connectWithPrecision')}</h3>
+            <h4 className="home-feature-subtitle">{t('scoutingSection.smarterScouting')}</h4>
 
             <ol>
-              <li>
-                Descubre talento con IA: metricas claras y perfiles listos para
-                evaluar.
-              </li>
-              <li>
-                Optimiza tu scouting y toma decisiones mas rapidas y precisas.
-              </li>
+              <li>{t('scoutingSection.discovery')}</li>
+              <li>{t('scoutingSection.decisions')}</li>
             </ol>
           </div>
 
           <div className="home-feature-image home-feature-image-right">
             <img
               src={basketPlayer}
-              alt="Jugador de baloncesto lanzando al aro"
+              alt={t('scoutingSection.basketballPlayerShootingAtTheHoop')}
               className="home-feature-photo"
             />
           </div>
         </div>
 
         <div className="home-overlap-cta">
-          <p>
-            Lleva tu scouting al siguiente nivel. En Athletain te conectamos con
-            talento verificado y te brindamos datos precisos para decidir con
-            seguridad.
-          </p>
+          <p>{t('scoutingSection.ctaDescription')}</p>
           <button className="home-btn-secondary" onClick={onRegister}>
-            Registrate
+            {t('scoutingSection.signUp')}
           </button>
         </div>
       </div>

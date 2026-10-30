@@ -196,3 +196,59 @@
     display: none;
   }
 }
+
+/* A quiet text control alongside the existing login link. */
+.site-nav-desktop-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-nav-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #596273;
+  font-family: var(--font-rag123), Oswald, Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.site-nav-language button {
+  border: 0;
+  background: transparent;
+  padding: 6px 3px;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-nav-language button[aria-pressed="true"] {
+  color: #0f1829;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-nav-language button:hover {
+  color: #0f1829;
+}
+
+.site-nav-language button:focus-visible {
+  outline: 2px solid #2a3448;
+  outline-offset: 2px;
+}
+
+@media (min-width: 861px) {
+  .site-nav-menu > .site-nav-language {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-nav-desktop-actions {
+    display: none;
+  }
+}

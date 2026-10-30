@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n/useLanguage';
 import type { MouseEventHandler } from 'react';
 import heroPlayer from '../../../assets/images/hero-player.png';
 
@@ -6,24 +7,25 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ onRegister }: HeroSectionProps) {
+  const t = useT();
   return (
     <section className="home-hero">
       <div className="home-hero-flare" />
 
       <div className="home-hero-inner">
         <div className="home-hero-copy">
-          <h1>Exposicion para atletas.</h1>
-          <h2>Precision para cazatalentos.</h2>
-          <p>Una conexion mas inteligente y rapida.</p>
+          <h1>{t('heroSection.visibilityForAthletes')}</h1>
+          <h2>{t('heroSection.precisionForScouts')}</h2>
+          <p>{t('heroSection.subtitle')}</p>
 
           <button className="home-btn-primary" onClick={onRegister}>
-            Registrate
+            {t('heroSection.signUp')}
             <span className="home-btn-primary-icon" />
           </button>
         </div>
 
         <div className="home-hero-art-wrap">
-          <img src={heroPlayer} alt="Jugador de futbol en accion" className="home-hero-player" />
+          <img src={heroPlayer} alt={t('heroSection.footballPlayerInAction')} className="home-hero-player" />
         </div>
       </div>
     </section>

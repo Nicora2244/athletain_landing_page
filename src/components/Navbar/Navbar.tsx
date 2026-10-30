@@ -1,20 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useT } from '../../i18n/useLanguage';
+import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../assets/images/Logo.png';
 import shortLogo from '../../assets/images/Logo_corto.png';
 import './Navbar.css';
+import { LanguageSwitch } from '../../i18n/LanguageSwitch';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  return <NavbarContent key={location.pathname} />;
+}
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
+function NavbarContent() {
+  const t = useT();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="site-nav">
-      <nav className="site-nav-inner" aria-label="Principal">
+      <nav className="site-nav-inner" aria-label={t('navbar.mainNavigation')}>
         <NavLink to="/" end className="site-nav-logo">
           <img src={logo} alt="Athletain" className="site-nav-logo-image site-nav-logo-image-full" />
           <img src={shortLogo} alt="Athletain" className="site-nav-logo-image site-nav-logo-image-short" />
@@ -23,7 +26,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`site-nav-toggle${isMenuOpen ? ' is-open' : ''}`}
-          aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          aria-label={isMenuOpen ? t('navbar.closeMenu') : t('navbar.openMenu')}
           aria-expanded={isMenuOpen}
           aria-controls="site-nav-menu"
           onClick={() => setIsMenuOpen((current) => !current)}
@@ -36,24 +39,28 @@ export default function Navbar() {
         <div id="site-nav-menu" className={`site-nav-menu${isMenuOpen ? ' is-open' : ''}`}>
           <div className="site-nav-links">
             <NavLink to="/" end className={({ isActive }) => `site-nav-link${isActive ? ' is-active' : ''}`}>
-              Inicio
+              {t('navbar.home')}
             </NavLink>
             <NavLink to="/quienes-somos" className={({ isActive }) => `site-nav-link${isActive ? ' is-active' : ''}`}>
-              Sobre Nosotros
+              {t('navbar.aboutUs')}
             </NavLink>
             <NavLink to="/planes" className={({ isActive }) => `site-nav-link${isActive ? ' is-active' : ''}`}>
-              Planes
+              {t('navbar.plans')}
             </NavLink>
           </div>
 
           <a href="https://CrisMen2610.github.io/athletain_app" className="site-nav-login">
-            Iniciar Sesion
+            {t('navbar.logIn')}
           </a>
+          <LanguageSwitch />
         </div>
 
-        <a href="https://CrisMen2610.github.io/athletain_app" className="site-nav-login site-nav-login-desktop">
-          Iniciar Sesion
-        </a>
+        <div className="site-nav-desktop-actions">
+          <LanguageSwitch />
+          <a href="https://CrisMen2610.github.io/athletain_app" className="site-nav-login site-nav-login-desktop">
+            {t('navbar.logIn')}
+          </a>
+        </div>
       </nav>
     </header>
   );

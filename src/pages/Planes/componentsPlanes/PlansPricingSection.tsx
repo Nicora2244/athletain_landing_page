@@ -1,7 +1,10 @@
+import { useT } from '../../../i18n/useLanguage';
 import { audienceSectionId } from '../plansAudience';
-import { audiencePlans } from '../plansData';
+import { getAudiencePlans } from '../plansData';
 
 export function PlansPricingSection() {
+  const t = useT();
+  const audiencePlans = getAudiencePlans(t);
   return (
     <>
       {audiencePlans.map((group) => (
@@ -24,7 +27,7 @@ export function PlansPricingSection() {
                   {plan.note && <p className="plans-card-note">{plan.note}</p>}
                   <p className="plans-card-description">{plan.description}</p>
                   <button type="button" className="plans-card-cta">
-                    {plan.cta ?? 'Acceder'}
+                    {plan.cta ?? t('plansPricingSection.getStarted')}
                   </button>
                 </article>
               ))}

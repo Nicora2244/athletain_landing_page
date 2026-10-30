@@ -1,6 +1,9 @@
-import { audiencePlans } from '../plansData';
+import { useT } from '../../../i18n/useLanguage';
+import { getAudiencePlans } from '../plansData';
 
 export function PlansCompareSection() {
+  const t = useT();
+  const audiencePlans = getAudiencePlans(t);
   return (
     <>
       {audiencePlans.map((group) => (
@@ -14,7 +17,9 @@ export function PlansCompareSection() {
                 <article key={plan.name} className="plans-compare-incremental-card">
                   <h4>{plan.name}</h4>
                   <p className="plans-compare-incremental-base">
-                    {plan.includesPlan ? `Todo lo de ${plan.includesPlan}, mas:` : 'Incluye:'}
+                    {plan.includesPlan
+                      ? t('plansCompareSection.everythingIn').replace('{plan}', plan.includesPlan)
+                      : t('plansCompareSection.includes')}
                   </p>
                   <ul>
                     {plan.features.map((feature) => (

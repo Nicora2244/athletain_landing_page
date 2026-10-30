@@ -1,3 +1,4 @@
+import { useT } from '../../../i18n/useLanguage';
 import { useState, type ReactNode } from 'react';
 import { FaYoutube } from 'react-icons/fa';
 import { IoAmericanFootball } from 'react-icons/io5';
@@ -15,28 +16,26 @@ type AboutCard = {
   icon: ReactNode;
 };
 
-const cards: AboutCard[] = [
-  {
-    id: 'mission',
-    frontTitle: 'Nuestra mision',
-    backTitle: 'Nuestra mision',
-    frontImage: volleyballPlayers,
-    icon: <IoAmericanFootball />,
-    description:
-      'Impulsar el desarrollo profesional de los atletas mediante tecnologia, asesoria legal y visibilidad estrategica. Buscamos brindar acceso equitativo a herramientas que les permitan crecer, competir y construir una carrera deportiva solida.',
-  },
-  {
-    id: 'vision',
-    frontTitle: 'Nuestra vision',
-    backTitle: 'Nuestra vision',
-    frontImage: gymnast,
-    icon: <FaYoutube />,
-    description:
-      'Ser la plataforma de referencia para atletas que buscan proyeccion internacional, respaldo juridico especializado y posicionamiento profesional. Queremos transformar la forma en que los deportistas gestionan su futuro dentro y fuera del campo.',
-  },
-];
-
 export function AboutMissionVisionSection() {
+  const t = useT();
+  const cards: AboutCard[] = [
+    {
+      id: 'mission',
+      frontTitle: t('aboutMissionVisionSection.ourMission'),
+      backTitle: t('aboutMissionVisionSection.ourMission'),
+      frontImage: volleyballPlayers,
+      icon: <IoAmericanFootball />,
+      description: t('aboutMissionVisionSection.missionDescription'),
+    },
+    {
+      id: 'vision',
+      frontTitle: t('aboutMissionVisionSection.ourVision'),
+      backTitle: t('aboutMissionVisionSection.ourVision'),
+      frontImage: gymnast,
+      icon: <FaYoutube />,
+      description: t('aboutMissionVisionSection.visionDescription'),
+    },
+  ];
   const [flipped, setFlipped] = useState<Record<CardId, boolean>>({
     mission: false,
     vision: false,
@@ -65,20 +64,20 @@ export function AboutMissionVisionSection() {
             >
               <span className="about-flip-card-inner">
                 <span className="about-flip-card-face about-flip-card-front">
-                  <img
-                    src={card.frontImage}
-                    alt=""
-                    className="about-flip-card-image"
-                  />
+                  <img src={card.frontImage} alt="" className="about-flip-card-image" />
                   <span className="about-flip-card-front-content">
-                    <span className="about-flip-card-badge" aria-hidden="true">{card.icon}</span>
+                    <span className="about-flip-card-badge" aria-hidden="true">
+                      {card.icon}
+                    </span>
                     <span className="about-flip-card-title">{card.frontTitle}</span>
                   </span>
                 </span>
 
                 <span className="about-flip-card-face about-flip-card-back">
                   <span className="about-flip-card-back-content">
-                    <span className="about-flip-card-badge" aria-hidden="true">{card.icon}</span>
+                    <span className="about-flip-card-badge" aria-hidden="true">
+                      {card.icon}
+                    </span>
                     <span className="about-flip-card-title">{card.backTitle}</span>
                     <span className="about-flip-card-text">{card.description}</span>
                   </span>
