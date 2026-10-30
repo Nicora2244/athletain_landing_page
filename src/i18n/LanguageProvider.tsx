@@ -12,8 +12,7 @@ function initialLanguage(): Language {
   } catch {
     // Private browsing or storage restrictions must not block the page.
   }
-  if (typeof navigator === 'undefined') return 'es';
-  return navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en';
+  return 'en';
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
